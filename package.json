@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "Pamplona",
   "main": "pamplona.js",
+  "preferGlobal": true,
+  "bin": {
+    "pamplona": "pamplona.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/FileShadow/pamplona.git"
@@ -20,5 +24,11 @@
   "bugs": {
     "url": "https://github.com/FileShadow/pamplona/issues"
   },
-  "homepage": "https://github.com/FileShadow/pamplona#readme"
+  "homepage": "https://github.com/FileShadow/pamplona#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "selfsigned": "^1.10.3"
+  }
 }
