@@ -31,7 +31,7 @@
 		console.info( `Pamplona; listening on https://${hostname}:${httpsPort}` );
 
 		// statics, parsers, and routes
-		app.use( express.static( 'pamplona-ui', { index: [ 'index.html' ] } ) );
+		app.use( express.static( 'pamplona-ui/build', { index: [ 'index.html' ] } ) );
 		app.use( bodyParser.urlencoded( { extended: false } ) ); // application/x-www-form-urlencoded
 		app.use( bodyParser.json() ); // application/json
 		app.use( cookieParser() );

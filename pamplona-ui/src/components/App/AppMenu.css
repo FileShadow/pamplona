@@ -1,0 +1,38 @@
+
+.menu-close {
+	position: absolute;
+    right: 5px;
+    top: 5px;
+    line-height: 28px;
+    height: 28px;
+    width: 28px;
+    margin: 0;
+    font-size: 20px;
+	padding: 0 0 0 2px;
+	cursor: pointer;
+}
+
+.modal.add-connection {
+	width: 800px;
+	height: 500px;
+}
+
+.add-connection-box {
+	position: absolute;
+	bottom: 64px;
+	left: 0;
+	right: 0;
+	background: #333;
+	padding: 5px;
+	text-align: center;
+	border-top: 1px solid rgba(33,33,33,0.25);
+}
+
+.add-connection-box > button {
+	width: auto;
+	line-height: 0px;
+}
+
+.add-connection-box > button > i {
+	font-size: 20px;
+}
