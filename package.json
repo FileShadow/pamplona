@@ -35,8 +35,8 @@
     "concurrently": "^3.5.1"
   },
   "scripts": {
-	  "start": "concurrently \"npm run pamplona\" \"npm run pamplona-ui\"",
-	  "pamplona": "node pamplona.js",
-	  "pamplona-ui": "cd pamplona-ui && npm run start"
+    "start": "concurrently \"npm run pamplona\" \"npm run pamplona-ui\"",
+    "pamplona": "node pamplona.js",
+    "pamplona-ui": "cd pamplona-ui && npm run start"
   }
 }

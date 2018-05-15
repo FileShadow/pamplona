@@ -1,7 +1,18 @@
 import React from 'react';
 import './App.css';
 import AppMenu from './AppMenu';
-// import ConnectMgr from '../ConnectMgr/ConnectMgr';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import createHistory from 'history/createBrowserHistory';
+import { Route } from 'react-router';
+import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
+// import reducers from './reducers';
+import Home from '../Home/Home';
+import Other from '../Other/Other';
+
+const history = createHistory();
+const middleware = routerMiddleware( history );
+const store = createStore( combineReducers( { router: routerReducer } ), applyMiddleware( middleware ) );
 
 class App extends React.Component {
 	constructor( props ) {
@@ -31,9 +42,16 @@ class App extends React.Component {
 						</div>
 					</div>
 				</header>
-				<div className={ "main" + ( this.state.menuIsOpen ? " open" : "" ) }>
+				<div className={ 'main' + ( this.state.menuIsOpen ? ' open' : '' ) }>
 					<AppMenu toggleMenu={this.toggleMenu} isOpen={this.state.menuIsOpen} />
-					<div className="main-right">Right</div>
+					<Provider store={store}>
+						<ConnectedRouter history={history}>
+							<div>
+								<Route exact path="/" component={Home} />
+								<Route path="/other" component={Other} />
+							</div>
+						</ConnectedRouter>
+					</Provider>
 				</div>
 			</div>
 		);

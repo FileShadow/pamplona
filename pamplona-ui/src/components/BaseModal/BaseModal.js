@@ -1,11 +1,7 @@
 import React from 'react';
-import ReactModal from 'react-modal';
-import './Modal.css';
+import './BaseModal.css';
 
-ReactModal.setAppElement('#root');
-
-
-class Modal extends React.Component {
+class BaseModal extends React.Component {
 	constructor( props ) {
 		super( props );
 		this.state = {
@@ -14,6 +10,7 @@ class Modal extends React.Component {
 
 		this.openModal = this.openModal.bind( this );
 		this.closeModal = this.closeModal.bind( this );
+		this.toggle = this.toggle.bind( this );
 	}
 
 	openModal() {
@@ -26,9 +23,14 @@ class Modal extends React.Component {
 		this.setState( { showModal: false } );
 	}
 
+	toggle() {
+		console.log( "Modal.toggle" );
+		this.setState( { showModal: ! this.state.showModal } );
+	}
+
 	render() {
 		return null;
 	}
 }
 
-export default Modal;
+export default BaseModal;
