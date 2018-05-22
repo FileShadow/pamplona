@@ -12,14 +12,18 @@
 	margin-right: -4px;
 }
 
-.modal-dialog {
+.modal .modal-dialog {
 	display: inline-block;
 	text-align: left;
 	vertical-align: middle;
 }
 
-button.close {
+.modal button.close {
 	outline-style: none;
 	box-shadow: none;
 	border-color: transparent;
+}
+
+.modal h5.modal-title {
+	font-weight: bold;
 }

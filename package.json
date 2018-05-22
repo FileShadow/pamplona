@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/FileShadow/pamplona#readme",
   "dependencies": {
+    "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.3",
@@ -35,8 +36,8 @@
     "concurrently": "^3.5.1"
   },
   "scripts": {
-    "start": "concurrently \"npm run pamplona\" \"npm run pamplona-ui\"",
-    "pamplona": "node pamplona.js",
+    "start": "concurrently 'npm run pamplona' 'npm run pamplona-ui'",
+    "pamplona": "forever -w pamplona.js",
     "pamplona-ui": "cd pamplona-ui && npm run start"
   }
 }

@@ -5,9 +5,22 @@ html, body {
 }
 
 body {
-	font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Verdana,Geneva,sans-serif;
 }
 
 #root {
 	height: 100%;
+}
+
+/* disable lastpass */
+form[autocomplete="off"] input[type="text"],
+form[autocomplete="off"] input[type="password"] {
+	background-position: 150% 50% !important;
+	background-image: none !important;
+	background-attachment: none !important;
+	cursor: text !important;
+}
+div[id^=__lpform_],
+img[id^=__lpform_] {
+	display: none !important;
 }

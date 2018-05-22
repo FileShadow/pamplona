@@ -1,12 +1,12 @@
 import React from 'react';
-import './App.css';
-import AppMenu from './AppMenu';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import createHistory from 'history/createBrowserHistory';
 import { Route } from 'react-router';
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
 // import reducers from './reducers';
+import './App.css';
+import AppMenu from './AppMenu';
 import Home from '../Home/Home';
 import Other from '../Other/Other';
 
@@ -43,10 +43,10 @@ class App extends React.Component {
 					</div>
 				</header>
 				<div className={ 'main' + ( this.state.menuIsOpen ? ' open' : '' ) }>
-					<AppMenu toggleMenu={this.toggleMenu} isOpen={this.state.menuIsOpen} />
+					<AppMenu className="main-left" toggleMenu={this.toggleMenu} isOpen={this.state.menuIsOpen} />
 					<Provider store={store}>
 						<ConnectedRouter history={history}>
-							<div>
+							<div className="main-right">
 								<Route exact path="/" component={Home} />
 								<Route path="/other" component={Other} />
 							</div>

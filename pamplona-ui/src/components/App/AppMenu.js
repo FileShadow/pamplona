@@ -14,6 +14,7 @@ class AppMenu extends React.Component {
 
 	static get propTypes () {
 		return {
+			'className': PropTypes.string.isRequired,
 			'toggleMenu': PropTypes.func.isRequired
 		};
 	}
@@ -24,16 +25,16 @@ class AppMenu extends React.Component {
 
 	render() {
 		return (
-			<div className="main-left">
+			<div className={'app-menu ' + this.props.className}>
 				<button type="button" className="close menu-close" aria-label="Close" onClick={this.props.toggleMenu}>
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<div className="add-connection-box">
+				<div className="menu-footer">
 					<Button color="secondary" onClick={this.toggleAddConnection}>
 						<i className="fas fa-plus"></i> Add
 					</Button>
 				</div>
-				<AddConnectionModal ref={this.addConnection} className="add-connection" />
+				<AddConnectionModal ref={this.addConnection} />
 			</div>
 		);
 	}

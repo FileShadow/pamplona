@@ -57,3 +57,4 @@ typings/
 .DS_Store
 package-lock.json
 *.pem
+connections.json

@@ -36,6 +36,8 @@
 		app.use( bodyParser.json() ); // application/json
 		app.use( cookieParser() );
 
+		const api = require( './api' );
+		app.use( api.router );
 
 		/**
 		 * generate self-signed SSL certificate
